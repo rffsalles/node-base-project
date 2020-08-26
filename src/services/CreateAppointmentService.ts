@@ -8,7 +8,10 @@ interface RequestDTO {
     date: Date;
 }
 class CreateAppointmentService {
-    public async execute({ providerId, date }: RequestDTO): Promise<void> {
+    public async execute({
+        providerId,
+        date,
+    }: RequestDTO): Promise<Appointment> {
         const appointmentsRepository = getCustomRepository(
             AppointmentsRepository,
         );
@@ -17,12 +20,12 @@ class CreateAppointmentService {
         if (await appointmentsRepository.findByDate(AppointmentDate)) {
             throw Error('this appointment is already booked!');
         }
-        // const appointment = appointmentsRepository.create({
-        //     providerId,
-        //     data: AppointmentDate,
-        // });
-        // await appointmentsRepository.save(appointment);
-        //  return appointment;
+        const appointment = appointmentsRepository.create({
+            providerId,
+            date: AppointmentDate,
+        });
+        await appointmentsRepository.save(appointment);
+        return appointment;
     }
 }
 export default CreateAppointmentService;

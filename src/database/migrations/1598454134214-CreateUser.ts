@@ -30,13 +30,13 @@ export default class CreateUser1598454134214 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'createdAt',
+                        name: 'created_at',
                         type: 'timestamp',
                         default: 'now()',
                         isNullable: false,
                     },
                     {
-                        name: 'updatedAt',
+                        name: 'updated_at',
                         type: 'timestamp',
                         default: 'now()',
                         isNullable: false,

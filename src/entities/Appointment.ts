@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import {
     Entity,
     Column,
@@ -24,10 +25,10 @@ class Appointment {
     date: Date;
 
     @UpdateDateColumn()
-    createdAt: Date;
+    created_at: Date;
 
     @UpdateDateColumn()
-    updatedAt: Date;
+    updated_at: Date;
 
     // constructor({ provider, date }: Omit<Appointment, 'id'>) {
     //     this.id = uuid();

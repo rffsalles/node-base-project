@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import appointmentsRoutes from './appointments.routes';
+import usersRoutes from './users.routes';
 
 const routes = Router();
 
@@ -7,6 +8,7 @@ const routes = Router();
 //   return response.json({ name: 'teste' });
 // });
 routes.use('/appointments', appointmentsRoutes);
+routes.use('/users', usersRoutes);
 
 routes.get('/', (request, response) => {
     return response.json({ project: { name: 'Go Barber' } });

@@ -5,9 +5,6 @@ import sessionsRoutes from './sessions.routes';
 
 const routes = Router();
 
-// routes.use('/', (request, response) => {
-//   return response.json({ name: 'teste' });
-// });
 routes.use('/appointments', appointmentsRoutes);
 routes.use('/users', usersRoutes);
 routes.use('/sessions', sessionsRoutes);

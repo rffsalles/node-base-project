@@ -14,7 +14,8 @@ sessionsRouter.post('/', async (request, response) => {
         delete user.password;
         return response.json({ user, token });
     } catch (err) {
-        return response.status(400).json({ error: err.message });
+        const { message, statusCode } = err;
+        return response.status(statusCode).json({ error: message });
     }
 });
 export default sessionsRouter;
